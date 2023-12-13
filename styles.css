@@ -4,25 +4,24 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 #title {
   font-size: 8em;
   overflow: hidden;
-  animation: typing 3s steps(4);
+  animation: typing 3s steps(4,end);
+}
+
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
 }
 
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 3em;
 }
 
 button {
@@ -44,3 +43,24 @@ p {
   margin-top: 3em;
 }
 
+/* Alt styling for mobile */
+@media screen and (max-width: 600px) {
+  #title {
+    overflow-wrap: break-word;
+    animation: none;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .response-div, .button-div{
+    margin: 0em;
+    width: 100%;
+  }
+
+  p, button {
+    margin-top: .5em
+  }
+}
