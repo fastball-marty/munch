@@ -44,7 +44,7 @@ p {
 }
 
 /* Alt styling for mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
   #title {
     overflow-wrap: break-word;
     animation: none;
